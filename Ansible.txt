@@ -1,0 +1,114 @@
+Microsoft Windows [Version 10.0.19042.508]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Docker-VM>docker ps
+'docker' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Docker-VM>vagrant ssh
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-186-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Fri Jan 22 08:01:10 2021 from 10.0.2.2
+vagrant@docker-vm:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                     NAMES
+ec887468615b        ubuntu              "bash"              3 hours ago         Up 2 hours          0.0.0.0:8085->16000/tcp   fb
+vagrant@docker-vm:~$ docker stop ec887468615b        ubuntu              "bash"              3 hours ago         Up 2 hours          0.0.0.0:8085->16000/tcp   fb
+-bash: 16000/tcp: No such file or directory
+vagrant@docker-vm:~$ docker stop ec887468615b
+ec887468615b
+vagrant@docker-vm:~$ sudo apt-get install ansible
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  ieee-data libyaml-0-2 python-crypto python-ecdsa python-httplib2 python-jinja2 python-markupsafe python-netaddr
+  python-paramiko python-pkg-resources python-selinux python-six python-yaml
+Suggested packages:
+  sshpass python-crypto-dbg python-crypto-doc python-jinja2-doc ipython python-netaddr-docs python-setuptools
+The following NEW packages will be installed:
+  ansible ieee-data libyaml-0-2 python-crypto python-ecdsa python-httplib2 python-jinja2 python-markupsafe
+  python-netaddr python-paramiko python-pkg-resources python-selinux python-six python-yaml
+0 upgraded, 14 newly installed, 0 to remove and 31 not upgraded.
+
+vagrant@docker-vm:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+C:\Docker-VM>pwd
+'pwd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Docker-VM>cd
+C:\Docker-VM
+
+C:\Docker-VM>vagrant ssh
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-186-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+New release '18.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Fri Jan 22 09:38:29 2021 from 10.0.2.2
+vagrant@docker-vm:~$ sudo su
+
+root@docker-vm:/home/vagrant#
+root@docker-vm:/home/vagrant# ls
+Shrutkriti-alpine
+root@docker-vm:/home/vagrant# cd /etc/ansible
+root@docker-vm:/etc/ansible# ls
+ansible.cfg  hosts
+root@docker-vm:/etc/ansible# vim /etc/ansible
+root@docker-vm:/etc/ansible# root@docker-vm:/etc/ansible# ls
+ansible.cfg  hosts
+root@docker-vm:/etc/ansible# vim hosts
+root@docker-vm:/etc/ansible# vim ansible.cfg
+root@docker-vm:/etc/ansible# exit
+exit
+vagrant@docker-vm:~$ sudo apt-get install ansible
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+ansible is already the newest version (2.0.0.2-2ubuntu1.3).
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+vagrant@docker-vm:~$ sudo apt-get install sshpass
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  sshpass
+0 upgraded, 1 newly installed, 0 to remove and 31 not upgraded.
+Need to get 10.5 kB of archives.
+After this operation, 56.3 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
+Fetched 10.5 kB in 0s (10.5 kB/s)
+Selecting previously unselected package sshpass.
+(Reading database ... 68426 files and directories currently installed.)
+Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
+Unpacking sshpass (1.05-1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up sshpass (1.05-1) ...
+vagrant@docker-vm:~$ sudo app -a hostname
+sudo: app: command not found
+
+vagrant@docker-vm:~$ sudo app -a hostname
+sudo: app: command not found
+vagrant@docker-vm:~$ hostname
+docker-vm
+vagrant@docker-vm:~$ ansible app -m ping
+192.168.60.60 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+vagrant@docker-vm:~$ ansible localhost -m ping
+localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+vagrant@docker-vm:~$
+
+
